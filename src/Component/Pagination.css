@@ -1,0 +1,30 @@
+.container {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  .page-item {
+    display: inline-block;
+  }
+  
+  .page-link {
+    display: inline-block;
+    padding: 4px 8px;
+    background-color: lightgray;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .page-link:hover {
+    background-color: gray;
+    color: white;
+  }
+  
+  .page-item.active .page-link {
+    background-color: gray;
+    color: white;
+  }
+  

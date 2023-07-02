@@ -1,0 +1,16 @@
+
+
+export const FETCH_BOOKS_REQUEST = "FETCH_BOOKS_REQUEST";
+export const FETCH_BOOKS_SUCCESS = "FETCH_BOOKS_SUCCESS";
+export const FETCH_BOOKS_FAILURE = "FETCH_BOOKS_FAILURE";
+
+
+export const ADD_BOOK = "ADD_BOOK";
+export const EDIT_BOOK = "EDIT_BOOK";
+
+
+export const SEARCH_REQUEST = 'SEARCH_REQUEST';
+export const SEARCH_SUCCESS = 'SEARCH_SUCCESS';
+export const SEARCH_FAILURE = 'SEARCH_FAILURE';
+
+
