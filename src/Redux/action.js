@@ -22,6 +22,24 @@ const fetchBooksSuccess = (data) =>{
     }
 }
 
+const addBooksRequest = () =>{
+    return {
+        type : Types.ADD_BOOK_REQUEST,
+    }
+}
+
+const addBooksFailure = () =>{
+    return {
+        type : Types.ADD_BOOK_FAILURE,
+    }
+}
+
+const addBooksSuccess = (data) =>{
+    return {
+        type: Types.ADD_BOOK_SUCCESS,
+        payload: data
+    }
+}
 
 export const getBooks =(book)=>(dispatch)=>{
 
@@ -68,5 +86,39 @@ export const editBooks = (_id, book)=>(dispatch)=>{
         console.log(err);
     })
 }
+
+export const addBook = (newBookData) => {
+    return async (dispatch) => {
+      try {
+        const bookArray = [newBookData];
+        // POST request using axios
+        const response = await axios.post('https://books-1gq7.onrender.com/books/create', newBookData);
+  
+        // Check if the request was successful
+        if (response.status === 200) {
+          // Extract the added books from the response
+          const addedBooks = response.data;
+  
+          // Dispatch the action to add the books to the store
+          dispatch({
+            type: Types.ADD_BOOK,
+            payload: addedBooks,
+          });
+        } else {
+            dispatch({
+                type: Types.ADD_BOOK_FAILURE,
+
+            })
+          // Handle the case when the request fails
+          // You can dispatch an action to handle error state or show a notification
+        }
+      } catch (error) {
+        console.log(error)
+        // Handle any error that occurs during the API request
+        // You can dispatch an action to handle error state or show a notification
+      }
+    };
+  };
+  
 
 export { fetchBooksRequest, fetchBooksSuccess, fetchBooksFailure}

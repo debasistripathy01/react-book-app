@@ -8,6 +8,11 @@ export const FETCH_BOOKS_FAILURE = "FETCH_BOOKS_FAILURE";
 export const ADD_BOOK = "ADD_BOOK";
 export const EDIT_BOOK = "EDIT_BOOK";
 
+export const ADD_BOOK_REQUEST = 'ADD_BOOK_REQUEST';
+export const ADD_BOOK_SUCCESS = 'ADD_BOOK_SUCCESS';
+export const ADD_BOOK_FAILURE = 'ADD_BOOK_FAILURE';
+
+
 
 export const SEARCH_REQUEST = 'SEARCH_REQUEST';
 export const SEARCH_SUCCESS = 'SEARCH_SUCCESS';

@@ -2,8 +2,8 @@ import * as Types from "./actionTypes";
 
 
 const initialState = {
-    isLoading: false,
     books: [],
+    isLoading: false,
     isError: false,
 }
 
@@ -45,7 +45,6 @@ export const booksReducer = (oldState = initialState, action) => {
 
             return {
                 ...oldState,
-                
                 books: oldState.books.map((elem) =>
                 elem.id === payload.id ? payload : elem
             )
@@ -54,7 +53,7 @@ export const booksReducer = (oldState = initialState, action) => {
 
 
         default:
-            return oldState
+            return {...oldState}
     }
 }
 
