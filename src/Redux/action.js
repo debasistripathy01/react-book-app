@@ -28,7 +28,7 @@ export const getBooks =(book)=>(dispatch)=>{
     dispatch(fetchBooksRequest());
 
     return  axios
-    .get("http://localhost:4501/books")
+    .get("https://books-1gq7.onrender.com/books")
     .then((res) => {
       dispatch(fetchBooksSuccess(res.data));
       dispatch({
@@ -54,7 +54,7 @@ export const editBooks = (_id, book)=>(dispatch)=>{
     //Starting fetch request
     dispatch(fetchBooksRequest());
 
-    return axios.put(`http://localhost:4501/books/${_id}`, updatedBook)
+    return axios.put(`https://books-1gq7.onrender.com/books/${_id}`, updatedBook)
     .then((res)=> {
         // books successfully fetched
         dispatch(fetchBooksSuccess(res.data));
